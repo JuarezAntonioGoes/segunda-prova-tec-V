@@ -6,11 +6,19 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class BillsService {
-  public baseUrl = 'https://hub.apitree.com/rodrigofaria/bill/';
+  public baseUrl = 'https://calm-anchorage-20290.herokuapp.com/';
 
   constructor(private http: HttpClient) {}
 
-  getBills(): Observable<any> {
-    return this.http.get(this.baseUrl + 'api/v1/bills');
+  getBills(customer: string): Observable<any> {
+    return this.http.get(this.baseUrl + 'api/v1/bills?customer=' + customer);
+  }
+
+  deleteBills(id: number): Observable<any> {
+    return this.http.delete(this.baseUrl + 'api/v1/bills/' + id);
+  }
+
+  postBills(data: number): Observable<any> {
+    return this.http.post(this.baseUrl + 'api/v1/bills/', data);
   }
 }

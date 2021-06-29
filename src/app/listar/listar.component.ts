@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BillsService } from '../bills.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-listar',
@@ -12,15 +13,7 @@ export class ListarComponent implements OnInit {
   public bills: any;
 
   ngOnInit(): void {
-    this.getItems();
   }
 
-  getItems(): void {
-    this.billsService.getBills().subscribe(
-      (response) => {
-        console.log(response);
-      },
-      (err) => {}
-    );
-  }
+  
 }

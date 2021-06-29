@@ -1,1 +1,6 @@
-<p>cadastro works!</p>
+<form #f="ngForm" (ngSubmit)="onSubmit(f)">
+  <label>
+    amount
+    <input type="text" name="amount" ngModel required #amount="ngModel" />
+  </label>
+</form>

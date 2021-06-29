@@ -5,8 +5,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 
 const routes: Routes = [
-  { path: '', component: ListarComponent },
-  { path: 'cadastro', component: CadastroComponent },
+  { path: 'listar', component: ListarComponent },
+  { path: '', component: CadastroComponent },
 ];
 
 @NgModule({
