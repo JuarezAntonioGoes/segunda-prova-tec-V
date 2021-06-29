@@ -1,6 +1,23 @@
-<form #f="ngForm" (ngSubmit)="onSubmit(f)">
-  <label>
-    amount
-    <input type="text" name="amount" ngModel required #amount="ngModel" />
-  </label>
+<form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+  <div>
+    <label for="amount">amount</label>
+    <input name="amount" id="amount" ngModel required />
+  </div>
+
+  <div>
+    <label for="product">product</label>
+    <input name="product" id="product" ngModel required />
+  </div>
+
+  <div>
+    <label for="paymentMethod">paymentMethod</label>
+    <input name="paymentMethod" id="paymentMethod" ngModel required />
+  </div>
+
+  <div>
+    <label for="customer">customer</label>
+    <input name="customer" id="customer" ngModel required />
+  </div>
+
+  <button>Submit</button>
 </form>
