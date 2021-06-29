@@ -18,7 +18,7 @@ export class BillsService {
     return this.http.delete(this.baseUrl + 'api/v1/bills/' + id);
   }
 
-  postBills(data: number): Observable<any> {
-    return this.http.post(this.baseUrl + 'api/v1/bills/', data);
+  postBills(data: {}): Observable<any> {
+    return this.http.post(this.baseUrl + 'api/v1/bills', data);
   }
 }

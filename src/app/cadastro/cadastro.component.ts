@@ -15,15 +15,14 @@ interface Bill {
   styleUrls: ['./cadastro.component.scss'],
 })
 export class CadastroComponent implements OnInit {
-
-  //public bill: Bill;
+  public bills: Array<Bill> = [];
 
   constructor(private billsService: BillsService) {}
 
   ngOnInit(): void {}
 
   onSubmit(f: NgForm): void {
-    console.log(f.value, f);
+    this.postItems(f.value);
   }
 
   getItems(customer: string): void {
@@ -35,10 +34,10 @@ export class CadastroComponent implements OnInit {
     );
   }
 
-  postItems(data: any): void {
+  postItems(data: Bill): void {
     this.billsService.postBills(data).subscribe(
       (response) => {
-        console.log(response);
+        this.bills.push(response);
       },
       (err) => {}
     );
